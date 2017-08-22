@@ -6,6 +6,11 @@ function ciudadesService($resource,API) {
 	},{
 		update:{
 			method:'PUT'
+		},
+		getCiudades:{
+			url:API+'/api/ciudades/find',
+			method:'GET',
+			isArray:true
 		}
 				
 	})

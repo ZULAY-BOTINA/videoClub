@@ -11,7 +11,8 @@ function AuthService($auth,$state){
 		isAdmin:isAdmin,
 		datosUsuario:datosUsuario,
 		idUsuario:idUsuario,
-		isAuthenticated:isAuthenticated
+		isAuthenticated:isAuthenticated,
+		getRoles:getRoles
 	}
 
 	function login(user,collback){
@@ -67,6 +68,13 @@ function AuthService($auth,$state){
 		if($auth.isAuthenticated()){
 			return true;
 		}else{
+			return false;
+		}
+	}
+	function getRoles() {
+		if ($auth.isAuthenticated()) {
+			return $auth.getPayload().roles;
+		} else {
 			return false;
 		}
 	}

@@ -6,9 +6,10 @@ angular.module('videoClubApp', [
     'ngResource', 
     'ngSanitize',
     'ui.router', 
-    'satellizer'
+    'satellizer',
+    'ngMaterial'
   ])
-  .constant("API","http://localhost:8080/AdsiEjemplo")
+  .constant("API","http://localhost:8080/adsi2017_backend_completo-master")
   .config(function($urlRouterProvider, $locationProvider,$authProvider,API) {
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
